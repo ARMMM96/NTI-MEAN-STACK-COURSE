@@ -135,19 +135,7 @@ editTask = (e, element) => {
         "Save Changes",
         []
       );
-      saveChanges.addEventListener("click", (e) => {
-        tasks.forEach((task) => {
-          if (task.ind == element.ind) {
-            console.log(task);
-            task.taskTitle = form_div.getElementsByTagName("input")[0].value;
-            task.taskType = form_div.getElementsByTagName("select")[0].value;
-            task.taskContent = form_div.getElementsByTagName(
-              "textarea"
-            )[0].value = paragraph;
-            console.log(task);
-          }
-        });
-      });
+      saveChanges.addEventListener("click", (e) => {});
       const ignoreEdit = createCustomElements(
         form_div,
         "button",
