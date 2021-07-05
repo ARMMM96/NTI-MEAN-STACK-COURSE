@@ -1,0 +1,4 @@
+todo list
+- task => title, content,  status, due date, start date 
+- form => button => show/hide add form
+            - div all tasks => edit, delete, change status
