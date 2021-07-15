@@ -1,0 +1,20 @@
+name
+birthyeaer
+password 
+email
+image
+tokens
+addresses
+phone
+role
+
+
+
+
+structure
+app => controllers, helpers
+database => conection, models
+routes => routing files
+src = > app.js
+.env
+index.js
