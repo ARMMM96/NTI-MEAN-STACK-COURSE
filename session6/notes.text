@@ -1,0 +1,6 @@
+user, tasks
+user => email, pass (incrypted), name, username, phone, id, birthyear, addresses
+task => userid, title, content, dudate, created at, updated at
+
+user => reg, login, forget pass(login, without login), logout, edit profile,
+add task, show hist tasks, edit his tasks
