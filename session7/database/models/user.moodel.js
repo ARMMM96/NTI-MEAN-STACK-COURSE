@@ -46,6 +46,14 @@ const userScaemah = new mongoose.Schema({
       },
     },
   ],
+  otp: {
+    type: String,
+    default: Date.now(),
+  },
+  userStatus: {
+    type: Boolean,
+    default: false,
+  },
   //   role: {},
   tokens: [
     {
@@ -57,7 +65,7 @@ const userScaemah = new mongoose.Schema({
 // hide some data
 userScaemah.methods.toJSON = function () {
   const user = this.toObject();
-  deleteElements = ["password", "tokens"];
+  deleteElements = ["password"];
   deleteElements.forEach((element) => {
     delete user[element];
   });
@@ -68,7 +76,10 @@ userScaemah.methods.toJSON = function () {
 userScaemah.pre("save", async function () {
   const user = this;
   if (user.isModified("password")) {
-    user.password = await bcrypt.hash(user.password, process.env.SALT);
+    user.password = await bcrypt.hash(
+      user.password,
+      parseInt(process.env.SALT)
+    );
   }
 });
 
@@ -81,7 +92,7 @@ userScaemah.statics.findByCreditionals = async (email, password) => {
   if (!isValid) throw new Error("invalid password");
 
   const isActivated = user.userStatus;
-  if (isActivated) throw new Error("Please Activate your account");
+  if (!isActivated) throw new Error("Please Activate your account");
 
   return user;
 };
