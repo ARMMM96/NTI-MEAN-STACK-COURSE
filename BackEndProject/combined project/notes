@@ -1,0 +1,15 @@
+installs 
+npm init --y
+npm i express jsonwebtoken validator dotenv mongoose bcryptjs multer cors
+
+structure
+app=> controllers, helpers
+database=> connection, models
+routes =>routing files
+src => app.js
+.env
+index.js
+
+users
+name,birthyear,pass,email,image,tokens,addresses,phone,role
+
