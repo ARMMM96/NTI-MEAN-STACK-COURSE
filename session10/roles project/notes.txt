@@ -1,0 +1,21 @@
+add roles => name 
+namge roles => routes
+
+addRoute => (developer) => url , [admintypes]
+
+
+roles => _id, name
+
+middlewareauth => get current rule
+                  get current user type (role)
+                  if route inside user type => authrized
+                  else unauthrized
+
+
+
+
+role => id_, name, [routes]
+routes => url
+user => username, password, user type
+all routes => link, [user type]
+user type => type
